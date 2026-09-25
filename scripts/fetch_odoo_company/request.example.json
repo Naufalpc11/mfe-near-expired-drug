@@ -1,0 +1,15 @@
+{
+  "variables": {},
+  "parameters": {
+    "search_term": "",
+    "limit": 50,
+    "offset": 0
+  },
+  "configuration": {
+    "url": "https://odoo19.javan.id",
+    "database": "odoo19_prod",
+    "username": "admin@javan.co.id",
+    "password": "J4v4nLabs"
+  },
+  "runkey": "fetch-company-2026-01-29-001"
+}

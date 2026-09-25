@@ -1,0 +1,22 @@
+{
+  "variables": {},
+  "parameters": {
+    "id": "12345",
+    "force": false,
+    "reason": "Testing soft delete"
+  },
+  "configuration": {
+    "url": "https://mockapi.example.com",
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Authorization",
+        "value": "Bearer your_token_here"
+      }
+    ]
+  },
+  "runkey": "test-delete-001"
+}

@@ -1,0 +1,44 @@
+{
+    "variables": {
+        "category": "Pengerjaan Pekerjaan Urgensi Tinggi dengan Mekanisme Pembayaran Upah Lembur",
+        "description": "\u003cp\u003eBerhasil menyelesaikan task berikut hingga RFT\u003c/p\u003e\n\u003cp\u003ehttps://collab.javan.co.id/projects/406?modal=Task-122234-406\u003c/p\u003e\n",
+        "endDate": "2026-04-27T18:30",
+        "fullname": "Muhammad Rizal Fauzi",
+        "grup": "Javan People Growth x Office Management",
+        "initiator": "rizal@javan.co.id",
+        "missionEndDate": "27-04-2026",
+        "missionStartDate": "27-04-2026",
+        "pg": "vilya@javan.co.id",
+        "project": "S00830-DEV/CR MOBILUS",
+        "requestor": "rizal@javan.co.id",
+        "result": "\u003cp\u003ehttp://gitlab.cmaicapitalgroup.com/cmadev/e_spga_be/-/merge_requests/3172\u003c/p\u003e\n",
+        "startDate": "2026-04-27T17:00",
+        "teamName": "Qisthi Ramadhani",
+        "teamUsername": "rama@javan.co.id",
+        "topic_wellness": "Wellness",
+        "totalJam": "1.50"
+    },
+    "parameters": {
+        "email": "initiator",
+        "message": "Review Pelaksanaan Peningkatan Capaian\n\nNama lead: ${fullname}\nKategori: ${category}\nProject: ${project}\nTanggal: ${missionStartDate} - ${missionEndDate}\nTugas yang harus dikerjakan: ${description}\n\nHasil Pelaksanaan\nDitugaskan Kepada: ${teamName}\nTanggal Pelaksanaan: ${startDate} - ${endDate} (${totalJam} jam)\nHasil: ${result}"
+    },
+    "configuration": {
+        "database": "odoo18-0709",
+        "db_host": "194.233.93.29",
+        "db_name": "joglo_makansiang",
+        "db_password": "MyStr0ngP@SS",
+        "db_port": "54322",
+        "db_user": "alurkerja_users",
+        "lunch_date_column": "lunch_date",
+        "lunch_email_column": "username",
+        "lunch_table": "vanya_order_makan_siang",
+        "password": "J4v4nLabs",
+        "telegram_chat_id_column": "chat_id",
+        "telegram_email_column": "username",
+        "telegram_table": "vanya_telegram_chat",
+        "telegram_token": "7049383851:AAGWY5W0p0F95oCAVX20kxMRsG6Kxk_yTIk",
+        "url": "https://odoo18.javan.id",
+        "username": "admin@javan.co.id"
+    },
+    "runkey": "exec-1778039829901875515-send_telegram_message"
+}

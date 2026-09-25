@@ -1,0 +1,19 @@
+{
+    "variables": {
+        "email": "test@example.com",
+        "recommendation": "- ya ini\n- gitu juga bisa\n- adalah pokoknya"
+    },
+    "parameters": {
+        "email": "email",
+        "message": "Halo!\n\nBerikut rekomendasi:\n${recommendation}"
+    },
+    "configuration": {
+        "db_host": "192.168.88.100",
+        "db_port": 55432,
+        "db_name": "joglo_makansiang",
+        "db_user": "postgres",
+        "db_password": "J4v4nDev!@#",
+        "telegram_token": "7324458142:AAHqz3jPgc_GHAD2PowOp6ocI885xKA86r4"
+    },
+    "runkey": "test-newline"
+}

@@ -1,0 +1,17 @@
+{
+    "variables": {
+        "initiator": "admin@example.com",
+        "execution_id": "exec-002"
+    },
+    "parameters": {
+        "email": "dhaniarfebrinwahyudi@gmail.com"
+    },
+    "configuration": {
+        "db_host": "192.168.88.100",
+        "db_port": 55432,
+        "db_name": "joglo_makansiang",
+        "db_user": "postgres",
+        "db_password": "J4v4nDev!@#"
+    },
+    "runkey": "test-run-002"
+}

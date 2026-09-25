@@ -1,0 +1,19 @@
+{
+    "variables": {
+        "initiator": "user@example.com",
+        "execution_id": "exec-001"
+    },
+    "parameters": {
+        "chat_id": "-1002213740032",
+        "topic_id": "6707"
+    },
+    "configuration": {
+        "db_host": "192.168.88.100",
+        "db_port": 55432,
+        "db_name": "joglo_makansiang",
+        "db_user": "postgres",
+        "db_password": "J4v4nDev!@#",
+        "telegram_token": "7324458142:AAHqz3jPgc_GHAD2PowOp6ocI885xKA86r4"
+    },
+    "runkey": "test-run-001"
+}

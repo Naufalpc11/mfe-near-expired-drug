@@ -1,0 +1,43 @@
+{
+  "variables": {},
+  "parameters": {
+    "journal_id": 13,
+    "date": "2026-01-30",
+    "ref": "Multi-line Expense Entry",
+    "company_id": 1,
+    "auto_post": true,
+    "line_ids": [
+      {
+        "account_id": 119,
+        "name": "Employee Salary",
+        "debit": 5000000,
+        "credit": 0
+      },
+      {
+        "account_id": 123,
+        "name": "Phone Expense",
+        "debit": 500000,
+        "credit": 0
+      },
+      {
+        "account_id": 124,
+        "name": "Electricity Expense",
+        "debit": 300000,
+        "credit": 0
+      },
+      {
+        "account_id": 57,
+        "name": "Bank Payment",
+        "debit": 0,
+        "credit": 5800000
+      }
+    ]
+  },
+  "configuration": {
+    "url": "https://accountingalurkerja.odoo.com/",
+    "database": "accountingalurkerja",
+    "username": "alurkerja.bisnis@gmail.com",
+    "password": "%!dvER#Y3p4?jq4"
+  },
+  "runkey": "test-multiline-001"
+}

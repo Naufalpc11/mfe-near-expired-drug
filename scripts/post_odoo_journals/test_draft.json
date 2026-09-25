@@ -1,0 +1,31 @@
+{
+  "variables": {},
+  "parameters": {
+    "journal_id": 13,
+    "date": "2026-01-30",
+    "ref": "Draft Journal Entry - For Review",
+    "company_id": 1,
+    "auto_post": false,
+    "line_ids": [
+      {
+        "account_id": 57,
+        "name": "Cash Received",
+        "debit": 250000,
+        "credit": 0
+      },
+      {
+        "account_id": 113,
+        "name": "Sales Revenue",
+        "debit": 0,
+        "credit": 250000
+      }
+    ]
+  },
+  "configuration": {
+    "url": "https://accountingalurkerja.odoo.com/",
+    "database": "accountingalurkerja",
+    "username": "alurkerja.bisnis@gmail.com",
+    "password": "%!dvER#Y3p4?jq4"
+  },
+  "runkey": "test-draft-001"
+}

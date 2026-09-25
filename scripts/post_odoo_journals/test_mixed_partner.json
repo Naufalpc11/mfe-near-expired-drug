@@ -1,0 +1,40 @@
+{
+  "variables": {},
+  "parameters": {
+    "journal_id": 13,
+    "date": "2026-01-30",
+    "ref": "Mixed Partner Entry",
+    "company_id": 1,
+    "auto_post": true,
+    "line_ids": [
+      {
+        "account_id": 57,
+        "name": "Cash from Customer A",
+        "debit": 300000,
+        "credit": 0,
+        "partner_id": 3
+      },
+      {
+        "account_id": 58,
+        "name": "AR Payment from Customer B",
+        "debit": 0,
+        "credit": 200000,
+        "partner_id": 10
+      },
+      {
+        "account_id": 113,
+        "name": "Revenue from Customer C",
+        "debit": 0,
+        "credit": 100000,
+        "partner_id": 15
+      }
+    ]
+  },
+  "configuration": {
+    "url": "https://accountingalurkerja.odoo.com/",
+    "database": "accountingalurkerja",
+    "username": "alurkerja.bisnis@gmail.com",
+    "password": "%!dvER#Y3p4?jq4"
+  },
+  "runkey": "test-mixed-partner-001"
+}

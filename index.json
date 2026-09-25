@@ -1,0 +1,395 @@
+{
+    "name": "Javan Addon",
+    "addon_key": "javan-addon",
+    "addon_tags": ["integration", "form", "module", "api"],
+    "version": "1.0.4",
+    "description": "Addon terpadu Javan Cipta Solusi",
+    "author": "Javan Cipta Solusi",
+    "license": "MIT",
+    "type": "SCRIPT",
+    "view_type": "MFE",
+    "view_path": "views/dist",
+    "component_scope": "javan_addon",
+    "custom_views": {
+        "CONFIGS": {
+            "CREATE": "pg_config_view",
+            "EDIT": "pg_config_view"
+        },
+        "ACTIONS": {
+            "sendTableList": "pg_action_view",
+            "get_record_by_email": "get_record_view",
+            "send_telegram_message": "send_telegram_view",
+            "send_telegram_group": "send_telegram_group_view",
+            "send_telegram_group_topic": "send_telegram_group_topic_view",
+            "post_odoo_payment": "vendorPayment_view",
+            "post_odoo_journals": "journalEntry_view",
+            "sendReminder": "send_reminder_view"
+        },
+        "FORMS": {
+            "team_form": "team_form_view",
+            "odoo_journal_form": "odoo_journal_form_view",
+            "izin_form": "izin_form_view",
+            "izin_form_pg": "izin_form_pg_view",
+            "izin_form_ganti": "izin_form_ganti",
+            "izin_with_file_form": "izin_with_file_form_view",
+            "parent_data": "parent_form_view",
+            "assignment_date": "assignment_date_view",
+            "check_approval_lead_form": "approval_lead_input",
+            "check_sisa_cuti_form": "check_sisa_cuti_input",
+            "project_collab": "project_collab_form_view",
+            "manager_approval": "manager_approval_view",
+            "allocation_remaining": "allocation_remaining_view",
+            "remaining_task": "remaining_task_view",
+            "analyze_images": "analize_nota_view",
+            "teamList": "team_multiple_select"
+        }
+    },
+    "config": {
+        "url": {
+            "type": "string",
+            "label": "Base URL",
+            "description": "Base URL untuk API (Odoo / PostgreSQL).",
+            "default": ""
+        },
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+            },
+            {
+                "key": "Authorization",
+                "value": "Bearer your_token_here",
+                "type": "text"
+            }
+        ],
+        "username": {
+            "type": "string",
+            "label": "Username",
+            "description": "Username untuk autentikasi API (N8N / Odoo)."
+        },
+        "password": {
+            "type": "password",
+            "label": "Password",
+            "description": "Password untuk autentikasi API."
+        },
+        "openai_token": {
+            "type": "password",
+            "label": "OpenAI API Token",
+            "description": "API token untuk OpenAI (digunakan untuk analisa gambar via Vision API).",
+            "default": ""
+        }
+    },
+    "forms": {
+        "team_form": {
+            "name": "Form Input Nama Tim",
+            "description": "Form untuk menambahkan anggota tim dengan nama dan role secara dinamis."
+        },
+        "odoo_journal_form": {
+            "name": "Odoo Journal Entry Configuration",
+            "description": "Form untuk konfigurasi company, journal, debit account, credit account, dan label journal item dari Odoo."
+        },
+        "izin_form": {
+            "name": "Date Calculator Form",
+            "description": "Form untuk pengajuan izin dengan perhitungan durasi otomatis berdasarkan tanggal dan jam."
+        },
+        "izin_form_pg": {
+            "name": "Date Calculator Form PG",
+            "description": "Form untuk pengajuan izin PG tanpa batasan tanggal dan jam, dapat memilih tanggal dan jam kapanpun."
+        },
+        "izin_form_ganti": {
+            "name": "Date Calculator Form Ganti",
+            "description": "Form untuk pengajuan izin ganti dengan datetime picker tanpa batasan, menampilkan durasi dalam jam saja."
+        },
+        "izin_with_file_form": {
+            "name": "Date Calculator Form With File",
+            "description": "Form untuk pengajuan izin dengan upload file pendukung."
+        },
+        "parent_data": {
+            "name": "Form Data Orang Tua",
+            "description": "Form untuk mengisi data orang tua (Nama, Alamat, Telepon)."
+        },
+        "assignment_date": {
+            "name": "Form Tanggal Penugasan",
+            "description": "Form untuk mengisi tanggal mulai dan selesai penugasan."
+        },
+        "check_approval_lead_form": {
+            "name": "Check Approval Lead",
+            "description": "Form untuk menampilkan lead yang akan melakukan approval izin."
+        },
+        "check_sisa_cuti_form": {
+            "name": "Check Sisa Cuti",
+            "description": "Form untuk menampilkan sisa alokasi cuti karyawan."
+        },
+        "project_collab": {
+            "name": "Project Collab Form",
+            "description": "Form untuk memilih project dari Project Collab API."
+        },
+        "manager_approval": {
+            "name": "Manager Approval Info",
+            "description": "Menampilkan lead manager untuk approval berdasarkan email user."
+        },
+        "allocation_remaining": {
+            "name": "Allocation Remaining Info",
+            "description": "Menampilkan sisa alokasi cuti (hari dan jam) berdasarkan email user."
+        },
+        "remaining_task": {
+            "name": "Remaining Task Info",
+            "description": "Menampilkan jumlah task aktif dari Taiga, Collab, dan Joglo berdasarkan email user."
+        },
+        "teamList": {
+            "name": "Team Multiple Select",
+            "description": "Remote multiple select field untuk teams. Mengembalikan nilai sebagai array nama tim."
+        },
+        "analyze_images": {
+            "name": "Analyze Images Form",
+            "description": "Form untuk mengirim list gambar dalam format base64 ke OpenAI Vision API dan menampilkan hasil analisa."
+        }
+                
+    },
+    "views": {},
+    "scripts": {
+        "send_telegram_message": {
+            "description": "Kirim pesan Telegram ke private chat berdasarkan email.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/send_telegram_message/send_telegram_message.py"
+            }
+        },
+        "send_telegram_group": {
+            "description": "Kirim pesan Telegram ke group chat berdasarkan nama group.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/send_telegram_group/send_telegram_group.py"
+            }
+        },
+        "send_telegram_group_topic": {
+            "description": "Kirim pesan Telegram ke topik/thread tertentu di dalam group chat.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/send_telegram_group_topic/send_telegram_group_topic.py"
+            }
+        },
+        "get_record_by_email": {
+            "description": "Ambil record dari tabel telegram_account berdasarkan email.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/get_record_by_email/get_record_by_email.py"
+            }
+        },
+        "sendTableList": {
+            "description": "Ambil daftar tabel PostgreSQL dan kirim ke Telegram.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/send_table_list/send_table_list.py"
+            }
+        },
+        "post_odoo_journals": {
+            "description": "Post journal entry ke sistem Odoo.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/post_odoo_journals/post_odoo_journals.py"
+            }
+        },
+        "post_odoo_payment": {
+            "description": "Post data pembayaran ke sistem Odoo.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/post_data_payment/post_data_payment.py"
+            }
+        },
+        "fetch_odoo_partner": {
+            "description": "Ambil data vendor/partner dari sistem Odoo.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/fetch_odoo_partner/fetch_odoo_partner.py"
+            }
+        },
+        "fetch_odoo_company": {
+            "description": "Ambil data company dari sistem Odoo.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/fetch_odoo_company/fetch_odoo_company.py"
+            }
+        },
+        "fetch_odoo_employee": {
+            "description": "Ambil data karyawan dari sistem Odoo.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/fetch_odoo_employee/fetch_odoo_employee.py"
+            }
+        },
+        "fetch_odoo_journals": {
+            "description": "Ambil data jurnal dari sistem Odoo berdasarkan company_id.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/fetch_odoo_journals/fetch_odoo_journals.py"
+            }
+        },
+        "fetch_odoo_account": {
+            "description": "Ambil data chart of accounts dari sistem Odoo.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/fetch_odoo_account/fetch_odoo_account.py"
+            }
+        },
+        "fetch_odoo_job_position": {
+            "description": "Ambil data posisi jabatan dari sistem Odoo.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/fetch_odoo_job_position/fetch_odoo_job_position.py"
+            }
+        },
+        "sendReminder": {
+            "description": "Kirim Telegram reminder ke user yang belum memesan makan siang hari ini.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/send_reminder/send_reminder.py"
+            }
+        },
+        "analyze_images": {
+            "description": "Analisa list gambar base64 menggunakan OpenAI Vision API dan kembalikan hasilnya.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/analyze_images/analyze_images.py"
+            }
+        }
+    },
+    "apis": {
+        "get_record_by_email": {
+            "name": "Get Record By Email API",
+            "description": "API endpoint untuk mengambil record telegram_account berdasarkan email.",
+            "type": "SCRIPT",
+            "endpoint": "get_record_by_email"
+        },
+        "fetch_odoo_partner": {
+            "name": "Fetch Odoo Partners",
+            "description": "Ambil data vendor dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_partner"
+        },
+        "fetch_odoo_company": {
+            "name": "Fetch Odoo Companies",
+            "description": "Ambil data company dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_company"
+        },
+        "fetch_odoo_employee": {
+            "name": "Fetch Odoo Employees",
+            "description": "Ambil data karyawan dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_employee"
+        },
+        "fetch_odoo_journals": {
+            "name": "Fetch Odoo Journals",
+            "description": "Ambil data jurnal dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_journals"
+        },
+        "fetch_odoo_account": {
+            "name": "Fetch Odoo Accounts",
+            "description": "Ambil chart of accounts dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_account"
+        },
+        "fetch_odoo_job_position": {
+            "name": "Fetch Odoo Job Positions",
+            "description": "Ambil data posisi jabatan dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_job_position"
+        },
+        "analyze_images": {
+            "name": "Analyze Images",
+            "description": "Analisa list gambar base64 menggunakan OpenAI Vision API.",
+            "type": "SCRIPT",
+            "endpoint": "analyze_images"
+        }
+    },
+    "actions": {
+        "send_telegram_message": {
+            "name": "Send Telegram Message",
+            "description": "Kirim pesan Telegram ke private chat. Pesan mendukung placeholder seperti ${fullName}.",
+            "type": "SCRIPT",
+            "endpoint": "send_telegram_message"
+        },
+        "send_telegram_group": {
+            "name": "Send Telegram Group Message",
+            "description": "Kirim pesan Telegram ke group chat berdasarkan nama group. Pesan mendukung placeholder seperti ${orderNumber}.",
+            "type": "SCRIPT",
+            "endpoint": "send_telegram_group"
+        },
+        "send_telegram_group_topic": {
+            "name": "Send Telegram Group Topic Message",
+            "description": "Kirim pesan Telegram ke topik/thread tertentu di dalam group chat menggunakan message_thread_id.",
+            "type": "SCRIPT",
+            "endpoint": "send_telegram_group_topic"
+        },
+        "get_record_by_email": {
+            "name": "Get Record By Email",
+            "description": "Ambil record telegram_account dari PostgreSQL berdasarkan email.",
+            "type": "SCRIPT",
+            "endpoint": "get_record_by_email"
+        },
+        "sendTableList": {
+            "name": "Send List to Telegram",
+            "description": "Ambil daftar tabel PostgreSQL dan kirim ke Telegram.",
+            "type": "SCRIPT",
+            "endpoint": "sendTableList"
+        },
+        "post_odoo_journals": {
+            "name": "Post Odoo Journal",
+            "description": "Post journal entry ke sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "post_odoo_journals"
+        },
+        "post_odoo_payment": {
+            "name": "Post Odoo Payment",
+            "description": "Post data pembayaran ke sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "post_odoo_payment"
+        },
+        "fetch_odoo_partner": {
+            "name": "Fetch Odoo Partners",
+            "description": "Ambil data vendor dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_partner"
+        },
+        "fetch_odoo_company": {
+            "name": "Fetch Odoo Companies",
+            "description": "Ambil data company dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_company"
+        },
+        "fetch_odoo_employee": {
+            "name": "Fetch Odoo Employees",
+            "description": "Ambil data karyawan dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_employee"
+        },
+        "fetch_odoo_journals": {
+            "name": "Fetch Odoo Journals",
+            "description": "Ambil data jurnal dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_journals"
+        },
+        "fetch_odoo_account": {
+            "name": "Fetch Odoo Accounts",
+            "description": "Ambil chart of accounts dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_account"
+        },
+        "fetch_odoo_job_position": {
+            "name": "Fetch Odoo Job Positions",
+            "description": "Ambil data posisi jabatan dari sistem Odoo.",
+            "type": "SCRIPT",
+            "endpoint": "fetch_odoo_job_position"
+        },
+        "sendReminder": {
+            "name": "Send Lunch Reminder",
+            "description": "Kirim Telegram reminder ke user yang belum memesan makan siang.",
+            "type": "SCRIPT",
+            "endpoint": "sendReminder"
+        }
+    }
+}
+

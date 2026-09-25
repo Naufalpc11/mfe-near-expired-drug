@@ -1,0 +1,18 @@
+{
+  "variables": {},
+  "parameters": {
+    "search_term": "Bank",
+    "account_type": "asset_cash",
+    "company_id": 1,
+    "limit": 10,
+    "offset": 0,
+    "include_types_info": false
+  },
+  "configuration": {
+    "url": "https://accountingalurkerja.odoo.com/",
+    "database": "accountingalurkerja",
+    "username": "alurkerja.bisnis@gmail.com",
+    "password": "%!dvER#Y3p4?jq4"
+  },
+  "runkey": "test-filter-001"
+}

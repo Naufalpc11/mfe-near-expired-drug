@@ -1,0 +1,21 @@
+{
+  "variables": {},
+  "parameters": {
+    "message_template": "Halo {email}, aku lihat kamu belum pesan makan siang untuk hari ini. Apakah Kamu mau pesan makan siang untuk hari ini?"
+  },
+  "configuration": {
+    "db_host": "192.168.88.100",
+    "db_port": 55432,
+    "db_name": "joglo_makansiang",
+    "db_user": "postgres",
+    "db_password": "J4v4nDev!@#",
+    "telegram_token": "7324458142:AAHqz3jPgc_GHAD2PowOp6ocI885xKA86r4",
+    "lunch_table": "lunch_data",
+    "lunch_email_column": "email",
+    "lunch_date_column": "tanggal",
+    "telegram_table": "telegram_account",
+    "telegram_email_column": "email",
+    "telegram_chat_id_column": "chatid"
+  },
+  "runkey": "test-reminder-001"
+}

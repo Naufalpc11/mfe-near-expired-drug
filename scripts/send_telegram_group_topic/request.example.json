@@ -1,0 +1,30 @@
+{
+    "variables": {
+        "senderName": "Admin",
+        "orderNumber": "ORD-98765",
+        "status": "Diproses",
+        "group_name": "JAVAN IG To The Moon 🚀",
+        "topic_name": "TEst",
+        "image_list": [
+            "/9j/4AAQSkZJRgAB...",
+            "data:image/png;base64,iVBORw0KGgo..."
+        ]
+    },
+    "parameters": {
+        "group_name": "group_name",
+        "topic_name": "topic_name",
+        "message": "📢 Notifikasi dari ${senderName}\n\nOrder <b>${orderNumber}</b> sekarang berstatus: <b>${status}</b>.\n\nHasil analisa gambar:\n${ai_analysis}\n\nMohon segera ditindaklanjuti.",
+        "images": "image_list",
+        "image_prompt": "Deskripsikan isi dari gambar-gambar berikut secara singkat."
+    },
+    "configuration": {
+        "db_host": "localhost",
+        "db_port": 5432,
+        "db_name": "vanyabot",
+        "db_user": "postgres",
+        "db_password": "yourPassword",
+        "telegram_token": "8688955887:AAH2iLdQSMqqdcKdfzmlQYG0vgscI-4W96Q",
+        "openai_token": "sk-your-openai-api-key"
+    },
+    "runkey": "test-group-topic-001"
+}

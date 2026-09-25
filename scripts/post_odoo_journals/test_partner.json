@@ -1,0 +1,33 @@
+{
+  "variables": {},
+  "parameters": {
+    "journal_id": 13,
+    "date": "2026-01-30",
+    "ref": "Payment with Partner ID",
+    "company_id": 1,
+    "auto_post": true,
+    "line_ids": [
+      {
+        "account_id": 57,
+        "name": "Cash Received from Customer",
+        "debit": 500000,
+        "credit": 0,
+        "partner_id": 3
+      },
+      {
+        "account_id": 58,
+        "name": "Accounts Receivable Payment",
+        "debit": 0,
+        "credit": 500000,
+        "partner_id": 3
+      }
+    ]
+  },
+  "configuration": {
+    "url": "https://accountingalurkerja.odoo.com/",
+    "database": "accountingalurkerja",
+    "username": "alurkerja.bisnis@gmail.com",
+    "password": "%!dvER#Y3p4?jq4"
+  },
+  "runkey": "test-partner-001"
+}

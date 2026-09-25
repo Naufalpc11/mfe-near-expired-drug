@@ -1,0 +1,5 @@
+node_modules/
+views/dist/
+views/node_modules/
+.env
+.DS_Store

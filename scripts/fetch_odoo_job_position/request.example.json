@@ -1,0 +1,16 @@
+{
+  "variables": {},
+  "parameters": {
+    "search_term": "",
+    "department": "",
+    "limit": 20,
+    "offset": 0
+  },
+  "configuration": {
+    "url": "https://odoo18.javan.id",
+    "database": "odoo18-0709",
+    "username": "admin@javan.co.id",
+    "password": "J4v4nLabs"
+  },
+  "runkey": "fetch-job-position-2026-01-30-001"
+}

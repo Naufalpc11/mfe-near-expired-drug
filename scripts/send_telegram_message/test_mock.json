@@ -1,0 +1,15 @@
+{
+    "variables": {
+        "email": "test@example.com",
+        "recommendation": "- ya ini\n- gitu juga bisa\n- adalah pokoknya",
+        "chatId": "123456789"
+    },
+    "parameters": {
+        "email": "email",
+        "message": "Halo!\n\nBerikut rekomendasi:\n${recommendation}"
+    },
+    "configuration": {
+        "telegram_token": "test_token_123"
+    },
+    "runkey": "test-mock"
+}

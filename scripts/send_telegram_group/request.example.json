@@ -1,0 +1,21 @@
+{
+    "variables": {
+        "group_name": "Tim Operasional",
+        "senderName": "Admin",
+        "orderNumber": "ORD-98765",
+        "status": "Diproses"
+    },
+    "parameters": {
+        "group_name": "group_name",
+        "message": "📢 Notifikasi dari ${senderName}\n\nOrder <b>${orderNumber}</b> sekarang berstatus: <b>${status}</b>.\n\nMohon segera ditindaklanjuti."
+    },
+    "configuration": {
+        "db_host": "192.168.88.100",
+        "db_port": 55432,
+        "db_name": "joglo_makansiang",
+        "db_user": "postgres",
+        "db_password": "J4v4nDev!@#",
+        "telegram_token": "7324458142:AAHqz3jPgc_GHAD2PowOp6ocI885xKA86r4"
+    },
+    "runkey": "test-group-001"
+}

@@ -1,0 +1,18 @@
+{
+  "variables": {},
+  "parameters": {
+    "vendor_name": "123131",
+    "amount": "31321321",
+    "goods_services": "barnanya ini123",
+    "date": "2026-01-21",
+    "memo": "12312312321",
+    "account_number": "123812038012"
+  },
+  "configuration": {
+    "url": "https://accountingalurkerja.odoo.com/",
+    "database": "accountingalurkerja",
+    "username": "alurkerja.bisnis@gmail.com",
+    "password": "%!dvER#Y3p4?jq4"
+  },
+  "runkey": "payment-exec-2026-01-21-001"
+}
