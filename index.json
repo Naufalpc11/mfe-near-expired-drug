@@ -159,6 +159,20 @@
         }
     },
     "scripts": {
+        "generate_berita_acara": {
+            "description": "Generate dokumen resmi Berita Acara Pemusnahan Obat berstandar Permenkes No. 73 Tahun 2016.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/generate_berita_acara/generate_berita_acara.py"
+            }
+        },
+        "scan_near_expired": {
+            "description": "Pemindaian harian persediaan obat near-expired berdasarkan ambang batas retur distributor.",
+            "scripts": {
+                "type": "python",
+                "executable": "scripts/scan_near_expired/scan_near_expired.py"
+            }
+        },
         "send_telegram_message": {
             "description": "Kirim pesan Telegram ke private chat berdasarkan email.",
             "scripts": {
@@ -313,6 +327,18 @@
             "description": "Analisa list gambar base64 menggunakan OpenAI Vision API.",
             "type": "SCRIPT",
             "endpoint": "analyze_images"
+        },
+        "generate_berita_acara": {
+            "name": "Generate Berita Acara API",
+            "description": "API untuk membuat dokumen Berita Acara Pemusnahan Obat.",
+            "type": "SCRIPT",
+            "endpoint": "generate_berita_acara"
+        },
+        "scan_near_expired": {
+            "name": "Scan Near-Expired Medicine API",
+            "description": "API untuk memindai persediaan obat near-expired harian.",
+            "type": "SCRIPT",
+            "endpoint": "scan_near_expired"
         }
     },
     "actions": {
@@ -399,6 +425,18 @@
             "description": "Kirim Telegram reminder ke user yang belum memesan makan siang.",
             "type": "SCRIPT",
             "endpoint": "sendReminder"
+        },
+        "generate_berita_acara": {
+            "name": "Generate Berita Acara Pemusnahan",
+            "description": "Generate dokumen resmi Berita Acara Pemusnahan Obat (Permenkes No. 73 Tahun 2016).",
+            "type": "SCRIPT",
+            "endpoint": "generate_berita_acara"
+        },
+        "scan_near_expired": {
+            "name": "Scan Near-Expired Medicine",
+            "description": "Pemindaian harian persediaan obat yang mendekati atau melampaui batas retur distributor.",
+            "type": "SCRIPT",
+            "endpoint": "scan_near_expired"
         }
     }
 }

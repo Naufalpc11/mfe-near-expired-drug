@@ -1,0 +1,7 @@
+{
+  "parameters": {
+    "scan_date": "2026-09-25"
+  },
+  "variables": {},
+  "runkey": "cron-daily-scan-001"
+}

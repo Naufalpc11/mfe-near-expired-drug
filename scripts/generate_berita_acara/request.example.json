@@ -1,0 +1,19 @@
+{
+  "variables": {
+    "nama_obat": "Amoxicillin 500mg",
+    "no_batch": "AMX-2401",
+    "bentuk_sediaan": "Tablet",
+    "qty_aktual": 20,
+    "qty_sistem": 20,
+    "pbf_asal": "PT Kimia Farma Trading",
+    "lokasi_rak": "Rak A-01",
+    "tanggal_musnah": "2026-09-25",
+    "metode_pemusnahan": "Dilarutkan dan dinetralkan via IPAL medis",
+    "nama_saksi": "Siti Rahma, A.Md.Farm.",
+    "catatan_temuan": "Kedaluwarsa dan telah melampaui batas retur distributor.",
+    "nama_apj": "Apoteker Penanggung Jawab, S.Farm., Apt.",
+    "sipa_apj": "SIPA: 19950812/SIPA-33.74/2023/2045"
+  },
+  "parameters": {},
+  "runkey": "test-run-001"
+}
