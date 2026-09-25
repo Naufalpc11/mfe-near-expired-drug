@@ -94,6 +94,10 @@ module.exports = {
 
         // addon_alurkerja_testing action views
         './send_reminder_view': './src/alurkerja-testing/SendReminderView.tsx',
+
+        // mfe-near-expired-drug
+        './MedicineAutoFillForm': './src/components/MedicineAutoFillForm.tsx',
+        './medicine_autofill_form': './src/components/MedicineAutoFillForm.tsx',
       },
       shared: {
         react: { singleton: true },

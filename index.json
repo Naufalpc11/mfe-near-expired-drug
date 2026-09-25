@@ -1,6 +1,6 @@
 {
-    "name": "Javan Addon",
-    "addon_key": "javan-addon",
+    "name": "MFE Near Expired Drug",
+    "addon_key": "mfe_ned",
     "addon_tags": ["integration", "form", "module", "api"],
     "version": "1.0.4",
     "description": "Addon terpadu Javan Cipta Solusi",
@@ -41,7 +41,9 @@
             "allocation_remaining": "allocation_remaining_view",
             "remaining_task": "remaining_task_view",
             "analyze_images": "analize_nota_view",
-            "teamList": "team_multiple_select"
+            "teamList": "team_multiple_select",
+            "medicine_autofill_form": "MedicineAutoFillForm",
+            "MedicineAutoFillForm": "MedicineAutoFillForm"
         }
     },
     "config": {
@@ -144,10 +146,18 @@
         "analyze_images": {
             "name": "Analyze Images Form",
             "description": "Form untuk mengirim list gambar dalam format base64 ke OpenAI Vision API dan menampilkan hasil analisa."
+        },
+        "medicine_autofill_form": {
+            "name": "Medicine Auto-Fill Form",
+            "description": "Form input & penampil data obat near-expired dengan auto-fill data teknis persediaan dan kalkulasi batas retur distributor."
         }
-                
     },
-    "views": {},
+    "views": {
+        "MedicineAutoFillForm": {
+            "name": "Medicine Auto-Fill Form",
+            "description": "Komponen MFE Auto-Fill Obat untuk Near-Expired Drug Workflow berdasarkan master persediaan."
+        }
+    },
     "scripts": {
         "send_telegram_message": {
             "description": "Kirim pesan Telegram ke private chat berdasarkan email.",
